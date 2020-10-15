@@ -18,11 +18,15 @@ class Player {
     });
   }
 
-  update(name){
+  update(){
     var playerIndex = "players/player" + this.index;
     database.ref(playerIndex).set({
       name:this.name,
       distance=this.distance
     });
+  }
+
+  static getPlayerInfo(){
+    var playerInfoRef = database.ref('players');
   }
 }
